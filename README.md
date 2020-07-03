@@ -10,8 +10,12 @@ This program reads the game's virtual memory in order to
 determine what side the player is on, and determine which  
 scripts should be used when using one of the bound script keys.  
   
-The script keys are left/right control and left/right shift.  
-As well as f5 to pause/unpause the program.
+The script keys are:
+- Left control (function 1)
+- Right control (function 2)
+- Left shift (function 3)
+- Right shift (function 4)
+- F5 (pause/unpause)
 
 ## Todo
 - [ ] Add more characters
