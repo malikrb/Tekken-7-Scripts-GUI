@@ -3,15 +3,22 @@ By: Malik R. Booker
 Created: June 30, 2020  
 Last Updated: July 2, 2020
 
+This program was entirely built on python and utilizes
+primarily utilizes **ctypes**, and **pymem** to interact  
+with the game's native virtual memory.  
+
 ## Overview and Demonstration
 ![Script](demo_/overviewdemo.gif)  
   
 This program reads the game's virtual memory in order to  
 determine what side the player is on, and determine which  
-scripts should be used when using one of the bound script keys.  
+scripts should be used when using one of the bound script keys. 
 
 ### Automatic Side Switch/Control Swap
 ![Script](demo_/SideSwitchDemo.gif)  
+
+The Interactive GUI allows the player to choose which scripts, if  
+any, they want to use while playing.
    
 ### Character-specific Script Selection from GUI
 ![Script](demo_/GuiDemo.gif)  
