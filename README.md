@@ -7,9 +7,9 @@ Last Updated: July 2, 2020*
 ## Overview and Demonstration
 The purpose of this program is so that the user can  
 **simulate multiple keystrokes with a single button.**  
-This program was entirely built on python and utilizes  
-primarily utilizes **ctypes**, and **pymem** to interact  
-with the game's native virtual memory and send virtual keys.  
+This program was entirely built on python and primarily  
+utilizes **ctypes**, and **pymem** to interact with the  
+game's native virtual memory and send virtual keys.  
 
 ![Script](demo_/overviewdemo.gif)  
   
