@@ -10,5 +10,9 @@ Last Updated: July 2, 2020
 - ~~Find a reliable way to produce executable versions of the program~~
 - ...
 
+## Forever Todo
+- bugfixes
+- improve execution speed/reliability of keys
+
 ## Ambitious?
 - wrap c++ version of SendInput into a custom module in place of pynput
