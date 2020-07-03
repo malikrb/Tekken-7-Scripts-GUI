@@ -5,7 +5,7 @@ Last Updated: July 2, 2020
 
 ## TODO
 - Add more characters
-- Make overlay only display on top of tekken gui while tekken hwnd is active
+- Make overlay only display over Tekken game while Tekken HWDN is active
 - Find address of 'in-game' bool so that scripts only work inside of a match
 - Find a reliable way to produce executable versions of the program
 - ...
