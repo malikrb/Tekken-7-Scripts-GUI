@@ -4,11 +4,17 @@ Created: June 30, 2020
 Last Updated: July 2, 2020
 
 ## Overview and Demonstration
-![Script](demo_/overviewdemo.gif)  
+![Script](demo_/OverviewDemo.gif)  
   
 This program reads the game's virtual memory in order to  
 determine what side the player is on, and determine which  
 scripts should be used when using one of the bound script keys.  
+
+### Automatic Side Switch/Control Swap
+![Script](demo_/SideSwitchDemo.gif)  
+   
+### Character-specific Script Selection from GUI
+![Script](demo_/GuiDemo.gif)  
   
 The script keys are:
 - Left control (function 1)
@@ -16,6 +22,8 @@ The script keys are:
 - Left shift (function 3)
 - Right shift (function 4)
 - F5 (pause/unpause)
+
+![Script](demo_/.gif)  
 
 ## Todo
 - [ ] Add more characters
