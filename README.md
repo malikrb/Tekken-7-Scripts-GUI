@@ -10,10 +10,10 @@ This program reads the game's virtual memory in order to
 determine what side the player is on, and determine which  
 scripts should be used when using one of the bound script keys.  
 
-### Automatic side switch control swap
+### Automatic Side Switch/Control Swap
 ![Script](demo_/SideSwitchDemo.gif)  
    
-### Character-specific script selection from GUI
+### Character-specific Script Selection from GUI
 ![Script](demo_/GuiDemo.gif)  
   
 The script keys are:
