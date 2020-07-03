@@ -49,3 +49,4 @@ The script keys are:
 
 ## Ambitious?
 - [ ] wrap c++ version of SendInput into a custom module in place of pynput
+- [ ] Only accept input if the player's frame advantage is >= 0
