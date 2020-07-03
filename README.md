@@ -31,8 +31,6 @@ The script keys are:
 - Right shift (function 4)
 - F5 (pause/unpause)
 
-![Script](demo_/.gif)  
-
 ## Todo
 - [ ] Add more characters
 - [ ] Make overlay only display over Tekken game while Tekken HWND is active
