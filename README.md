@@ -4,7 +4,14 @@ Created: June 30, 2020
 Last Updated: July 2, 2020
 
 ## Overview and Demonstration
-![Script](demo_/overviewdemo.gif)
+![Script](demo_/overviewdemo.gif)  
+  
+This program reads the game's virtual memory in order to  
+determine what side the player is on, and determine which  
+scripts should be used when using one of the bound script keys.  
+  
+The script keys are left/right control and left/right shift.  
+As well as f5 to pause/unpause the program.
 
 ## Todo
 - [ ] Add more characters
