@@ -3,5 +3,3 @@ build/
 dist/
 .git/
 Tekken7MainGUI.spec
-.*
-!/.gitignore
