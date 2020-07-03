@@ -4,11 +4,11 @@ Created: June 30, 2020
 Last Updated: July 2, 2020*
   
   
+## Overview and Demonstration
 This program was entirely built on python and utilizes  
 primarily utilizes **ctypes**, and **pymem** to interact  
 with the game's native virtual memory.  
 
-## Overview and Demonstration
 ![Script](demo_/overviewdemo.gif)  
   
 This program reads the game's virtual memory in order to  
