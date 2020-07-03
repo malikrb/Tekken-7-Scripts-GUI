@@ -4,10 +4,10 @@ Created: June 30, 2020
 Last Updated: July 2, 2020
 
 ## Todo
-- Add more characters
-- Make overlay only display over Tekken game while Tekken HWND is active
-- Find address of 'in-game' bool so that scripts only work inside of a match
-- ~~Find a reliable way to produce executable versions of the program~~
+- [] Add more characters
+- [] Make overlay only display over Tekken game while Tekken HWND is active
+- [] Find address of 'in-game' bool so that scripts only work inside of a match
+- [x] Find a reliable way to produce executable versions of the program
 - ...
 
 ## Forever Todo
