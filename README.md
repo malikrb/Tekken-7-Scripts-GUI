@@ -32,6 +32,7 @@ The script keys are:
 - Left shift (function 3)
 - Right shift (function 4)
 - F5 (pause/unpause)
+- ESC (immediately exit program)
 
 ## Todo
 - [ ] Add more characters
