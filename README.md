@@ -37,8 +37,10 @@ The script keys are:
 ## Todo
 - [ ] Add more characters
 - [ ] Make overlay only display over Tekken game while Tekken HWND is active
+- [ ] Pause script when HWND is not active
 - [ ] Find address of 'in-game' bool so that scripts only work inside of a match
 - [x] Find a reliable way to produce executable versions of the program
+- [ ] Only send input to Tekken HWND
 - [ ] ...
 
 ## Forever Todo
