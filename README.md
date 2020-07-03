@@ -4,7 +4,7 @@ Created: June 30, 2020
 Last Updated: July 2, 2020
 
 ## Overview and Demonstration
-![Imgur](https://i.imgur.com/Yb66iZ5.gifv)
+![Imgur](https://i.imgur.com/Yb66iZ5.mp4)
 
 ## Todo
 - [ ] Add more characters
