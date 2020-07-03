@@ -3,6 +3,9 @@ By: Malik R. Booker
 Created: June 30, 2020  
 Last Updated: July 2, 2020
 
+## Overview and Demonstration
+![Imgur](https://i.imgur.com/Yb66iZ5.gifv)
+
 ## Todo
 - [ ] Add more characters
 - [ ] Make overlay only display over Tekken game while Tekken HWND is active
