@@ -36,11 +36,10 @@ The script keys are:
 
 ## Todo
 - [ ] Add more characters
-- [ ] Make overlay only display over Tekken game while Tekken HWND is active
-- [ ] Pause script when HWND is not active
+- [ ] Make overlay only display over Tekken game
+- [x] Disable input when Tekken is in the background **July 6, 2020**
 - [ ] Find address of 'in-game' bool so that scripts only work inside of a match
-- [x] Find a reliable way to produce executable versions of the program
-- [ ] Only send input to Tekken HWND
+- [x] Find a reliable way to produce executable versions of the program **July 3, 2020**
 - [ ] ...
 
 ## Forever Todo
@@ -49,4 +48,4 @@ The script keys are:
 
 ## Ambitious?
 - [ ] wrap c++ version of SendInput into a custom module in place of pynput
-- [ ] Only accept input if the player's frame advantage is >= 0
+- [ ] Only accept input if the player's frame advantage is withing buffer frame range ( +-3 )
