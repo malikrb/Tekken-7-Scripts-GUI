@@ -36,9 +36,10 @@ The script keys are:
 
 ## Todo
 - [ ] Add more characters
+- [ ] Add functionality for user to choose initial side
 - [ ] Make overlay only display over Tekken game
 - [x] Disable input when Tekken is in the background **July 6, 2020**
-- [ ] Find address of 'in-game' bool so that scripts only work inside of a match
+- [x] Find address of 'in-game' bool so that scripts only work inside of a match **July 6, 2020**
 - [x] Find a reliable way to produce executable versions of the program **July 3, 2020**
 - [ ] ...
 
