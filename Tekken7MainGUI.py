@@ -13,9 +13,10 @@ from utils.moves import *
 
 # --------------- CONSTANTS -------------- #
 
-off_SIDE = 0x34C508C # WORKING AS OF 2020-07-02
+OFFSET_SIDE = 0x34C508C # WORKING AS OF 2020-07-02
+OFFSET_INGAME = 0x34303F8 # WORKING AS OF 2020-07-06
 
-CHARACTERLIST = list(sorted(Roster.keys()))
+CHARACTERLIST = list(Roster.keys())
 TRANSPARENTCOLOR = "green"
 NULL = None
 
@@ -73,6 +74,8 @@ class Main(tk.Tk):
         menuCharacters.place(x=self.w - 215, y=5)
 
 
+
+
 # -------------- REGULAR FUNCTIONS -------------- #
 
 
@@ -83,9 +86,9 @@ def on_press(key) -> bool:
     @fn: Performs actions based on virtual
          pressed.
     """
-    global app, Roster, CHAR, SIDE, ACTIVE
+    global app, Roster, CHAR, SIDE, ACTIVE, FOREGROUND
  
-    if ACTIVE == 1:
+    if ACTIVE == 1 and FOREGROUND:
         if key == Key.shift_r:
             Roster[CHAR].right_shift[SIDE]()
     
@@ -98,14 +101,14 @@ def on_press(key) -> bool:
         elif key == Key.ctrl_l:
             Roster[CHAR].left_control[SIDE]()
 
-    if key == Key.f5:
+    if key == Key.f5 and INGAME:
         if ACTIVE == 1:
             ACTIVE = -1
         else:
             ACTIVE = 1
 
     if key == Key.esc or ACTIVE == 0:
-        ACTIVE = 0
+        os._exit(1)
         return False
 
 def Update() -> NULL:
@@ -115,26 +118,37 @@ def Update() -> NULL:
     @fn: Reads Tekken Memory to determine SIDE
          and updates SIDE/ACTIVE variables.
     """
-    global CHAR, SIDE, ACTIVE
+    global processId, CHAR, SIDE, ACTIVE, FOREGROUND, INGAME
     while True:
-        SIDE = WhichSide(HWND, BASEADDRESS, off_SIDE, DATA, bytesread=BYTESREAD)
         CHAR = app.varCharacters.get()
-        if SIDE == 0:
+        
+        # Side Logic
+        if SIDE == 0 and INGAME:
             app.SIDE.set("LEFT")
-        elif SIDE == 1:
+
+        elif SIDE == 1 and INGAME:
             app.SIDE.set("RIGHT")
 
-        if ACTIVE == 1:
+        else:
+            app.SIDE.set("NONE")
+
+        # Active Logic
+        if ACTIVE == 1 and FOREGROUND:
             app.status.set("ON")
 
-        elif ACTIVE == -1:
+        elif ACTIVE == -1 or not FOREGROUND:
+            ACTIVE = -1
             app.status.set("PAUSED")
 
-        elif ACTIVE == 0:
+        if ACTIVE == 0:
             os._exit(1)
             break
 
-        sleep(0.1)
+        SIDE = WhichSide(processHandle, BASEADDRESS, OFFSET_SIDE, DATA, bytesread=BYTESREAD)
+        INGAME = IsIngame(processHandle, BASEADDRESS, OFFSET_INGAME, DATA)
+        FOREGROUND = IsForeground(processId)
+
+        sleep(0.25)
             
 def nput() -> NULL:
     """
@@ -152,9 +166,13 @@ def nput() -> NULL:
 if __name__ == "__main__":
 
     ACTIVE = 1
+    FOREGROUND = 0
+    INGAME = 0
     CHAR = NULL
     SIDE = NULL
-    HWND, BASEADDRESS, DATA, BYTESREAD = GetTekkenInfo()
+
+    processId = GetPid("TekkenGame-Win64-Shipping.exe")
+    processHandle, BASEADDRESS, DATA, BYTESREAD = GetTekkenInfo()
 
     app = Main()
     nput = Thread(target=nput)

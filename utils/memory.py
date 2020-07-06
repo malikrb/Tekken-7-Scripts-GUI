@@ -15,14 +15,18 @@ PROCESS_VM_READ = 0x0010
 TH32CS_SNAPMODULE = 0x00000008
 TH32CS_SNAPMODULE32 = 0x00000010
 
-OpenProcess       = kernel32.OpenProcess
+OpenProcess = kernel32.OpenProcess
 ReadProcessMemory = kernel32.ReadProcessMemory
 
+Module32Next = ctypes.windll.kernel32.Module32Next
 Module32First = ctypes.windll.kernel32.Module32First
-Module32Next  = ctypes.windll.kernel32.Module32Next
 
-MAX_MODULE_NAME32 = 255 + 1
+GetForegroundWindow = ctypes.windll.user32.GetForegroundWindow
+GetWindowThreadProcessId = ctypes.windll.user32.GetWindowThreadProcessId
+
+
 MAX_PATH = 260
+MAX_MODULE_NAME32 = 255 + 1
 
 INVALID_HANDLE_VALUE = -1
 
@@ -82,9 +86,9 @@ def GetTekkenInfo(name="TekkenGame-Win64-Shipping.exe") -> tuple:
 
         data = c_uint8()
         bytesread = c_ulonglong(0)
-        hwnd = OpenProcess(PROCESS_VM_READ, False, pid)
+        processHandle = OpenProcess(PROCESS_VM_READ, False, pid)
 
-        return hwnd, baseAddress, data, bytesread
+        return processHandle, baseAddress, data, bytesread
 
     else:
         print("Tekken Not Found.\n")
@@ -92,9 +96,23 @@ def GetTekkenInfo(name="TekkenGame-Win64-Shipping.exe") -> tuple:
         os.system("cls")
         os._exit(1)
 
-def WhichSide(HWND, baseAddress, offset, data, bytesread=c_ulonglong(0)):
-    ReadProcessMemory(HWND, baseAddress + offset, byref(data), sizeof(data), byref(bytesread))
+def WhichSide(processHandle, baseAddress, offset, data, bytesread=c_ulonglong(0)):
+    ReadProcessMemory(processHandle, baseAddress + offset, byref(data), sizeof(data), byref(bytesread))
     return data.value
+
+def IsIngame(processHandle, baseAddress, offset, data, bytesread=c_ulonglong(0)):
+    ReadProcessMemory(processHandle, baseAddress + offset, byref(data), sizeof(data), byref(bytesread))
+    return data.value
+
+def IsForeground(processId) -> bool:
+    result = DWORD()
+    HWND = GetForegroundWindow()
+    GetWindowThreadProcessId(HWND, byref(result))
+    
+    if result.value == processId:
+        return True
+
+    return False
 
 
 # ---------------- DEBUG ----------------- #
@@ -107,5 +125,7 @@ if __name__ == "__main__":
 
     mod = GetModule(game, pid)
     base = GetModuleBaseAddress(mod)
+
+    HWND, BASEADDRESS, DATA, BYTESREAD = GetTekkenInfo()
 
     print(base)
