@@ -40,7 +40,6 @@ The script keys are:
 - [x] Pause script when HWND is not active **July 6, 2020**
 - [ ] Find address of 'in-game' bool so that scripts only work inside of a match
 - [x] Find a reliable way to produce executable versions of the program **July 3, 2020**
-- [ ] Only send input to Tekken HWND
 - [ ] ...
 
 ## Forever Todo
