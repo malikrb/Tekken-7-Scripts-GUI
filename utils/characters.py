@@ -23,18 +23,18 @@ class Character:
 Roster = {
     "NONE": Character(), 
 
-    "Bryan": Character(
-            lc=(tauntJetUpper_L, tauntJetUpper_R),
-            rc=(NOP, NOP),
-            ls=(generic_three_plus_four, generic_three_plus_four),
-            rs=(generic_one_plus_two, generic_one_plus_two)
-    ),
-
     "Generic": Character(
             lc=(generic_two_plus_three, generic_two_plus_three),
             rc=(generic_one_plus_four, generic_one_plus_four),
             ls=(generic_three_plus_four, generic_three_plus_four),
             rs=(generic_one_plus_two, generic_one_plus_two),
+    ),
+
+    "Bryan": Character(
+            lc=(tauntJetUpper_L, tauntJetUpper_R),
+            rc=(NOP, NOP),
+            ls=(generic_three_plus_four, generic_three_plus_four),
+            rs=(generic_one_plus_two, generic_one_plus_two)
     ),
 
     "Heihachi": Character(

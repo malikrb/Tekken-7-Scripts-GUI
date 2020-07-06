@@ -13,9 +13,14 @@ from utils.moves import *
 
 # --------------- CONSTANTS -------------- #
 
+# Character Selected On Launch
+DEFAULT_CHARACTER = "Bryan"
+
+# Offsets
 OFFSET_SIDE = 0x34C508C # WORKING AS OF 2020-07-02
 OFFSET_INGAME = 0x34303F8 # WORKING AS OF 2020-07-06
 
+# Settings
 CHARACTERLIST = list(Roster.keys())
 TRANSPARENTCOLOR = "green"
 NULL = None
@@ -39,10 +44,10 @@ class Main(tk.Tk):
         # Variables
         self.status = tk.StringVar(self,"ON")
         self.SIDE = tk.StringVar(self, "Left")
-        self.varCharacters = tk.StringVar(self, "Generic")
+        self.varCharacters = tk.StringVar(self, f"{DEFAULT_CHARACTER}")
 
         # How to exit
-        labelHelp = tk.Label(self, text="Press 'Escape' to exit", fg="white", bg=TRANSPARENTCOLOR)
+        labelHelp = tk.Label(self, text="Press 'END' key to exit", fg="white", bg=TRANSPARENTCOLOR)
         labelHelp.configure(font=("Calibri", 14))
         labelHelp.place(x=10, y=5)
 
@@ -107,7 +112,7 @@ def on_press(key) -> bool:
         else:
             ACTIVE = 1
 
-    if key == Key.esc or ACTIVE == 0:
+    if key == Key.end or ACTIVE == 0:
         os._exit(1)
         return False
 
