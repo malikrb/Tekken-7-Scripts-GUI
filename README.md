@@ -40,6 +40,7 @@ The script keys are:
 - [x] Disable input when Tekken is in the background **July 6, 2020**
 - [ ] Find address of 'in-game' bool so that scripts only work inside of a match
 - [x] Find a reliable way to produce executable versions of the program **July 3, 2020**
+- [ ] Refactor utils
 - [ ] ...
 
 ## Forever Todo
