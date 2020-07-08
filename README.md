@@ -2,7 +2,7 @@
 # Tekken 7 Script GUI
 *By: Malik R. Booker  
 Created: June 30, 2020  
-Last Updated: July 3, 2020*
+Last Updated: July 8, 2020*
   
   
 ## Overview and Demonstration
